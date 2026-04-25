@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.learning</groupId>
-	<artifactId>logging</artifactId>
+	<artifactId>dblogging</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
