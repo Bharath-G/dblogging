@@ -1,3 +1,8 @@
 spring:
   application:
     name: logging
+
+logging:
+  structured:
+    format:
+      console: ecs   # Elastic Common Schema – one JSON object per log line
