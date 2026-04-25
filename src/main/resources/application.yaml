@@ -2,7 +2,3 @@ spring:
   application:
     name: dblogging
 
-logging:
-  structured:
-    format:
-      console: ecs   # Elastic Common Schema – one JSON object per log line
