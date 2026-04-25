@@ -17,7 +17,6 @@ import java.util.regex.Pattern;
 
 /**
  * Separate Spring-managed bean that owns the async DB-save logic.
- *
  * Why a separate bean?
  * Spring's @Async works through a proxy. Calling an @Async method on 'this'
  * (self-invocation) bypasses the proxy entirely, making the call synchronous.

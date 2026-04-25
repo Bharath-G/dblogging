@@ -6,6 +6,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.jspecify.annotations.NonNull;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
@@ -19,7 +20,6 @@ import java.util.UUID;
 /**
  * Servlet filter that intercepts every HTTP request/response and delegates
  * persistence to {@link LogPersistenceService} — a separate Spring-managed bean.
- *
  * The async save MUST go through an injected dependency (not 'this') so that
  * Spring's AOP proxy is respected and @Async actually runs on a thread-pool thread.
  */
@@ -47,8 +47,8 @@ public class DbLoggingFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
+                                    @NonNull FilterChain filterChain) throws ServletException, IOException {
 
         if (!properties.isEnabled()) {
             filterChain.doFilter(request, response);

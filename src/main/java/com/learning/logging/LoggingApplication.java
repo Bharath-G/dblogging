@@ -6,8 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LoggingApplication {
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(LoggingApplication.class, args);
 	}
 
+	private LoggingApplication(){
+		//not needed
+	}
 }

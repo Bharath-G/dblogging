@@ -13,7 +13,6 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
-
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @AutoConfiguration
